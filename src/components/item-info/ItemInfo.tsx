@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC, memo, useEffect} from 'react';
 import {ItemModel} from "../../pages/main/MainPage";
 import {Item} from "../item";
-import {StyledButton, StyledWidget} from "./ItemInfo.module";
+import {StyledButton, StyledInput, StyledWidget} from "./ItemInfo.module";
 
 export interface ItemInfoProps {
     selected: ItemModel;
@@ -24,7 +24,7 @@ export const ItemInfo: FC<ItemInfoProps> = memo(({selected, items, onAddRelation
 
     return (
         <StyledWidget>
-            <input placeholder="Название" value={name} onChange={(e) => setName(e.target.value)} />
+            <StyledInput placeholder="Название" value={name} onChange={(e) => setName(e.target.value)} />
             <div>{items?.map((relation, index) =>
                 relation !== selected &&
                 <Item

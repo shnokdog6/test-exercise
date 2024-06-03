@@ -3,8 +3,21 @@ import {Widget} from "../widget";
 
 export const StyledWidget = styled(Widget)`
     border-left: 1px solid rgba(0, 0, 0, 0.32);
-    align-items: center;
-    gap: 10px;
+    gap: 20px;
+    
+    @media (max-width: 576px) {
+        border-top: 1px solid rgba(0, 0, 0, 0.32);
+        border-left: none;
+    }
+`;
+
+export const StyledInput = styled.input`
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 5px; 
+    box-shadow: 0 0 2px 0 #000;
+    padding: 5px;
 `;
 
 export const StyledButton = styled.button`

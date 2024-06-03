@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FC, memo} from 'react';
-import {StyledDiv} from "./Item.module";
+import {StyledDiv, StyledLabel} from "./Item.module";
 
 export interface ItemProps {
     label?: string;
@@ -11,7 +11,7 @@ export const Item: FC<ItemProps> = memo(({label, checked, onChange}) => {
     return (
         <StyledDiv>
             <input type="checkbox" checked={checked || false} onChange={onChange}/>
-            <label>{label}</label>
+            <StyledLabel>{label}</StyledLabel>
         </StyledDiv>
     );
 });

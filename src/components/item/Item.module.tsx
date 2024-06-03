@@ -11,8 +11,11 @@ export const StyledDiv = styled.div`
         transform: scale(2);
         margin-right: 5px;
     }
-    
-    @media (max-width: 320px) {
-        font-size: 18px;
-    }
+`;
+
+export const StyledLabel = styled.label`
+    max-width: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
 `;
