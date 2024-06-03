@@ -1,0 +1,15 @@
+import styled from "styled-components";
+
+export const StyledWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const StyledDiv = styled.div`
+    display: flex;
+    box-shadow: 0 0 2px 0 #000;
+    border-radius: 5px;
+    overflow: hidden;
+`;
