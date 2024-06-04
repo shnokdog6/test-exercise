@@ -1,9 +1,7 @@
 import React, {FC, memo} from 'react';
-import {Item} from "../item";
-import {ItemModel} from "../../pages/main/MainPage";
-import {Flex} from "../flex";
+import {Item, ItemModel} from "../item";
 import {Widget} from "../widget";
-import {StyledButton} from "./Sidebar.module";
+import {StyledButton, StyledFlex} from "./Sidebar.module";
 import {useUniqueKeys} from "../../hooks";
 
 export interface SidebarProps {
@@ -18,14 +16,14 @@ export const Sidebar: FC<SidebarProps> = memo(({items, onItemButtonClick, onItem
     return (
         <Widget>
             {items.map((item, index) =>
-                <Flex key={keys[index]}>
+                <StyledFlex key={keys[index]} $gap={25}>
                     <Item
                         label={item.label}
                         checked={item.checked}
                         onChange={() => onItemCheckedChange?.(index)}
                     />
                     <StyledButton onClick={() => onItemButtonClick?.(index)}/>
-                </Flex>
+                </StyledFlex>
             )}
         </Widget>
     );

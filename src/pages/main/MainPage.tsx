@@ -1,13 +1,8 @@
 import React, {useState} from 'react';
 import {Sidebar} from "../../components/sidebar";
-import {ItemProps} from "../../components/item";
 import {ItemInfo} from "../../components/item-info";
 import {StyledDiv, StyledWrapper} from "./MainPage.module";
-import {useUniqueKeys} from "../../hooks";
-
-export interface ItemModel extends ItemProps {
-    relations: Set<number>;
-}
+import {ItemModel} from "../../components/item";
 
 const initialState: ItemModel[] = new Array(4)
     .fill(null)
@@ -50,6 +45,7 @@ export const MainPage = () => {
     }
 
     function save(name: string) {
+        if (name.length === 0) return;
         setItems(items.map((item: ItemModel) => {
             if (selectedItem !== item) return item;
             item.label = name;

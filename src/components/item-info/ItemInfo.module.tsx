@@ -3,6 +3,7 @@ import {Widget} from "../widget";
 
 export const StyledWidget = styled(Widget)`
     border-left: 1px solid rgba(0, 0, 0, 0.32);
+    align-items: center;
     gap: 20px;
     
     @media (max-width: 576px) {

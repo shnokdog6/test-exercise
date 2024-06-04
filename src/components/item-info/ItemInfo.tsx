@@ -1,8 +1,8 @@
 import React, {ChangeEvent, FC, memo, useEffect} from 'react';
-import {ItemModel} from "../../pages/main/MainPage";
-import {Item} from "../item";
+import {Item, ItemModel} from "../item";
 import {StyledButton, StyledInput, StyledWidget} from "./ItemInfo.module";
 import {useUniqueKeys} from "../../hooks";
+import {Flex} from "../flex";
 
 export interface ItemInfoProps {
     selected: ItemModel;
@@ -27,7 +27,7 @@ export const ItemInfo: FC<ItemInfoProps> = memo(({selected, items, onAddRelation
     return (
         <StyledWidget>
             <StyledInput placeholder="Название" value={name} onChange={(e) => setName(e.target.value)}/>
-            <div>{items?.map((relation, index) =>
+            <Flex $gap={18} $vertical>{items?.map((relation, index) =>
                 relation !== selected &&
                 <Item
                     key={keys[index]}
@@ -36,7 +36,7 @@ export const ItemInfo: FC<ItemInfoProps> = memo(({selected, items, onAddRelation
                     onChange={(e) => onChange(e, index)}
                 />
             )}
-            </div>
+            </Flex>
             <StyledButton onClick={() => onSave?.(name)}>Сохранить</StyledButton>
         </StyledWidget>
     );

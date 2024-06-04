@@ -4,9 +4,11 @@ export const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 30px;
-    gap: 5px;
+    gap: 12px;
+    
+   
 
     @media (max-width: 576px) {
         padding: 20px;
