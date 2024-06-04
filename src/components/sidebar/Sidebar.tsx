@@ -4,6 +4,7 @@ import {ItemModel} from "../../pages/main/MainPage";
 import {Flex} from "../flex";
 import {Widget} from "../widget";
 import {StyledButton} from "./Sidebar.module";
+import {useUniqueKeys} from "../../hooks";
 
 export interface SidebarProps {
     items: Array<ItemModel>;
@@ -12,10 +13,12 @@ export interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = memo(({items, onItemButtonClick, onItemCheckedChange}) => {
+    const keys = useUniqueKeys(Sidebar.name, items.length);
+
     return (
         <Widget>
             {items.map((item, index) =>
-                <Flex key={index}>
+                <Flex key={keys[index]}>
                     <Item
                         label={item.label}
                         checked={item.checked}

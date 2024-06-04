@@ -3,6 +3,7 @@ import {Sidebar} from "../../components/sidebar";
 import {ItemProps} from "../../components/item";
 import {ItemInfo} from "../../components/item-info";
 import {StyledDiv, StyledWrapper} from "./MainPage.module";
+import {useUniqueKeys} from "../../hooks";
 
 export interface ItemModel extends ItemProps {
     relations: Set<number>;
