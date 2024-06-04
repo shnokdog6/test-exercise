@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/test-exercise/static/js/main.99b8ebd4.js",
+    "static/media/pencil.png": "/test-exercise/static/media/pencil.9184c219868c78b90866.png",
+    "index.html": "/test-exercise/index.html",
+    "main.99b8ebd4.js.map": "/test-exercise/static/js/main.99b8ebd4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.99b8ebd4.js"
+  ]
+}
